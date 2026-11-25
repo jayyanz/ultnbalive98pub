@@ -1,0 +1,23 @@
+# Personal art is never committed or released (project rule; see the
+# nba98-jordan-art-handoff project doc). That covers the art pack itself, the
+# pictures and face packages made from it, and the game data copies built from it.
+mj.dat
+*.dat.zip
+*PERSONAL*
+nba98data/
+PLRDATA.VIV
+*.viv
+*.VIV
+*.bmp
+*.BMP
+*.fsh
+*.FSH
+*.png
+*.PNG
+**/work/
+**/art/
+# build output and runtime folders
+build/
+logs/
+crash/
+nbatemp/

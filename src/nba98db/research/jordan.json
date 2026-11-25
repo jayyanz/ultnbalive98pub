@@ -1,0 +1,43 @@
+{
+  "_note": "Michael Jordan in the Roster Player slot (records 303 Chicago and 404 East All-Stars). Public facts only; ratings are not touched (decision D6). Season totals checked against the career totals and against ESPN's 1984-98 totals before use.",
+  "sources": {
+    "bio": "https://www.statscrew.com/basketball/stats/p-jordami01 (born 1963-02-17 Brooklyn NY, North Carolina, 1984 round 1 pick 3, 6-6)",
+    "weight": "https://www.nba.com/player/893/michael_jordan (216 lb, his listed Bulls-era weight; StatsCrew and Basketball-Reference give a later 195/198)",
+    "seasons": "https://www.statscrew.com/basketball/stats/p-jordami01 (regular-season totals incl. GS, ORB/DRB, TOV)",
+    "check_totals": "career totals 1072 G / 32292 PTS (Basketball-Reference via Wikipedia); ESPN 1984-98 totals https://africa.espn.com/nba/s/2001/0910/1250346.html"
+  },
+  "fname": "Michael",
+  "name": "Jordan",
+  "nickname": "His Airness",
+  "number": 23,
+  "position": 3,
+  "position2": -1,
+  "height_in": 78,
+  "weight_lb": 216,
+  "birthdate": "19630217",
+  "birthtown": "Brooklyn",
+  "birthstate": "NY",
+  "college": "North Carolina",
+  "hand": 0,
+  "draft": {"year": 1984, "round": 1, "pick": 3, "team_abbrev": "Chi"},
+  "years_exp": 12,
+  "years_exp_note": "seasons played through 1996-97 (1993-94 not played), same convention as the shipped players (Brian Shaw 8)",
+  "appearance": {"color": 5, "bodytype": 3, "face": {"head": 10, "hair": 0, "facial_hair": 0, "accessories": 0}},
+  "speech_key": "REJORDA",
+  "career_team": "CHI",
+  "seasons_cols": "G GS MIN FGA FGM 3PA 3PM FTA FTM ORB DRB AST STL BLK TOV PF PTS",
+  "seasons": {
+    "84": [82,82,3144,1625,837,52,9,746,630,167,367,481,196,69,291,285,2313],
+    "85": [18,7,451,328,150,18,3,125,105,23,41,53,37,21,45,46,408],
+    "86": [82,82,3281,2279,1098,66,12,972,833,166,264,377,236,125,272,237,3041],
+    "87": [82,82,3311,1998,1069,53,7,860,723,139,310,485,259,131,252,270,2868],
+    "88": [81,81,3255,1795,966,98,27,793,674,149,503,650,234,65,290,247,2633],
+    "89": [82,82,3197,1964,1034,245,92,699,593,143,422,519,227,54,247,241,2753],
+    "90": [82,82,3034,1837,990,93,29,671,571,118,374,453,223,83,202,229,2580],
+    "91": [80,80,3102,1818,943,100,27,590,491,91,420,489,182,75,200,201,2404],
+    "92": [78,78,3067,2003,992,230,81,569,476,135,387,428,221,61,207,188,2541],
+    "94": [17,17,668,404,166,32,16,136,109,25,92,90,30,13,35,47,457],
+    "95": [82,82,3090,1850,916,260,111,657,548,148,395,352,180,42,197,195,2491],
+    "96": [82,82,3106,1892,920,297,111,576,480,113,369,352,140,44,166,156,2431]
+  }
+}

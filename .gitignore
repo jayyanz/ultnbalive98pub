@@ -1,0 +1,69 @@
+# ultnbalive98: what must never be committed (see the nba98-repo-setup and
+# nba98-jordan-art-handoff project docs). Checked again by hand before every commit.
+
+# ---- The game itself (EA): never in the repo
+Original Files/
+Original ISO Extract/
+Patch v1.1/
+NBAWIN.EXE
+*.[eE][xX][eE]
+
+# ---- Personal art and anything made from it
+Personal Art/
+*PERSONAL*
+mj.dat
+*.dat.zip
+
+# ---- Game-format and derived assets (any case)
+*.[bB][mM][pP]
+*.[fF][sS][hH]
+*.[vV][iI][vV]
+*.[dD][bB][fF]
+*.[cC][dD][xX]
+*.[dD][cC][tT]
+*.[aA][sS][fF]
+*.[bB][nN][kK]
+*.[hH][dD][rR]
+# speech banks and other game .dat files; our own roster mods are allowed
+*.[dD][aA][tT]
+!src/nba98db/out/nba98_*.dat
+# decoded or spliced speech, MicroTalk test files
+*.[wW][aA][vV]
+*.[uU][tT][kK]
+*.[mM][tT]
+*.[pP][cC][mM]
+*.[rR][aA][wW]
+**/speech/
+# screenshots and frame captures
+*.[pP][nN][gG]
+*.[jJ][pP][gG]
+*.[jJ][pP][eE][gG]
+*.[gG][iI][fF]
+*.[tT][gG][aA]
+glide_frame_*
+
+# ---- Dumps of the user's own game database (EA data) and models trained on it
+src/nba98db/out/rom_*.csv
+src/nba98db/out/unused_player_art.csv
+*.pkl
+
+# ---- Runtime output
+logs/
+crash/
+*.dmp
+nbatemp/
+nba98data/
+
+# ---- Built output (releases go to GitHub Releases later)
+dist/
+build/
+*.zip
+*.[dD][lL][lL]
+!src/third_party/SDL3.dll
+*.o
+*.obj
+*.res
+
+# ---- Python caches
+__pycache__/
+*.pyc

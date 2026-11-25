@@ -1,0 +1,8 @@
+LIBRARY eacsnd.dll
+EXPORTS
+    iSNDdllversion_ @1
+    iSNDdirectsetfunctions_ @2
+    iSNDdirectcaps_ @3
+    iSNDdirectstart_ @4
+    iSNDdirectstop_ @5
+    iSNDdirectserve_ @6

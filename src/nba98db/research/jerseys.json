@@ -1,0 +1,18 @@
+{
+  "GRANDER": {"jersey": "33", "team": "SAS", "source_url": "https://www.basketball-reference.com/teams/SAS/1997.html", "note": ""},
+  "GRANTHO": {"jersey": "2", "team": "VAN", "source_url": "https://www.basketball-reference.com/teams/VAN/1997.html", "note": ""},
+  "ADCALDW": {"jersey": "45", "team": "PHI", "source_url": "https://www.basketball-reference.com/teams/PHI/1997.html", "note": "PHI number. NJN 1996-97 number not found (BBR NJN page not reachable; statscrew NJN roster shows no numbers)."},
+  "GRDREIL": {"jersey": "50", "team": "DAL", "source_url": "https://www.basketball-reference.com/teams/DAL/1997.html", "note": ""},
+  "JAFEICK": {"jersey": "14", "team": "SAS", "source_url": "https://www.basketball-reference.com/teams/SAS/1997.html", "note": "Fetched BBR CHH/1997 roster also listed a Jamie Feick at 50; not relevant to SAS, unverified."},
+  "MAFISH_": {"jersey": "22", "team": "MIA", "source_url": "https://www.basketball-reference.com/teams/MIA/1997.html", "note": "MIA number found directly; WSB fallback not needed."},
+  "GRGRAHA": {"jersey": "21", "team": "SEA", "source_url": "https://www.basketball-reference.com/teams/SEA/1997.html", "note": ""},
+  "GAGRANT": {"jersey": "23", "team": "MIA", "source_url": "https://www.basketball-reference.com/teams/MIA/1997.html", "note": ""},
+  "ERLECKN": {"jersey": "55", "team": "VAN", "source_url": "https://www.basketball-reference.com/teams/VAN/1997.html", "note": "Fetched BBR CHH/1997 roster also listed an Eric Leckner at 45; not relevant to VAN, unverified."},
+  "AMMCCAS": {"jersey": "00", "team": "ORL", "source_url": "https://www.basketball-reference.com/teams/ORL/1997.html", "note": "Shown as 00, not 0."},
+  "DOROYAL": {"jersey": "5", "team": "CHH", "source_url": "https://www.basketball-reference.com/teams/CHH/1997.html", "note": "Also 5 on ORL 1996-97 roster (https://www.basketball-reference.com/teams/ORL/1997.html)."},
+  "DWSCHIN": {"jersey": null, "team": "LAC", "source_url": "", "note": "Not found: BBR LAC/1997 page not reachable (allowlist) and search budget exhausted; statscrew LAC roster has no numbers."},
+  "BYSCOTT": {"jersey": "4", "team": "LAL", "source_url": "https://www.basketball-reference.com/teams/LAL/1997.html", "note": "Confirmed 4."},
+  "CATHOMA": {"jersey": "23", "team": "CLE", "source_url": "https://www.basketball-reference.com/teams/CLE/1997.html", "note": ""},
+  "BRTHOMP": {"jersey": "6", "team": "DEN", "source_url": "https://www.basketball-reference.com/teams/DEN/1997.html", "note": "Confirmed 6."},
+  "DAVAUGH": {"jersey": "42", "team": "ORL", "source_url": "https://www.basketball-reference.com/teams/ORL/1997.html", "note": "42, not 34 (34 is Brian Evans on that roster)."}
+}

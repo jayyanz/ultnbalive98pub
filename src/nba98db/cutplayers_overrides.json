@@ -1,0 +1,4 @@
+{
+  "_comment": "Hand corrections applied on top of the research files. Keys: any research field (e.g. jersey_1996_97, jersey_is_double_zero, positions, left_handed, college) or 'ratings': {FIELD: value}.",
+  "ROPARIS": {"jersey_is_double_zero": true, "_why": "Parish wore 00 (research note)"}
+}

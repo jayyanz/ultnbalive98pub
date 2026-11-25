@@ -1,0 +1,290 @@
+; NBA Live 98 fix, {BUILD} build. All settings are optional.
+; Releases ship this file as nba98.ini.default. On the first start the
+; launcher copies it to nba98.ini, which holds your settings from then on and
+; is never replaced by an update. To go back to the defaults, delete
+; nba98.ini. After an update, nba98.ini.default lists any new settings.
+;@main
+; This is the Main build for playing. If something goes wrong, the Debug build
+; (same files, with logs and crash reports switched on) helps track it down.
+;@end
+;@debug
+; This is the Debug build: logs go to the logs folder and crash reports
+; (a log entry plus a .dmp file) to the crash folder. Use the Main build for
+; normal play.
+;@end
+
+[launcher]
+; Game exe to start (default: NBAWIN.EXE, else nba98.exe)
+;Exe=NBAWIN.EXE
+; Arguments for the game (default: 3dfx)
+;Args=3dfx
+;@debug
+; Write logs\launcher.log (1 = yes, default in Debug)
+;Log=1
+; Wait for the game to close and report a crash with a message (1 = yes, default)
+;WatchGame=1
+;@end
+
+[nba98]
+; Skip the CD check (1 = yes, default)
+;NoCDCheck=1
+; Pin only the game's own threads to one CPU (1 = yes, default). Replaces the
+; old single-core compatibility fix without starving the graphics driver.
+;PinGameThreads=1
+; Which CPU the game's threads use (default: lowest available)
+;GameCPU=0
+; Stop the game's worker threads only at a safe point (holding no lock) when
+; the game kills them (1 = yes, default). Prevents freezes when movies or
+; streams are stopped.
+;SafeTerminate=1
+; In 3dfx mode, stop the game switching the monitor to 640x480 through
+; DirectDraw, so our glide2x.dll can use the desktop resolution (1 = yes, default)
+;KeepDesktopMode=1
+; Remember drive details (volume name, free space, drive type) instead of
+; asking Windows again on every file the game opens (1 = yes, default)
+;CacheDriveInfo=1
+; Keep the game's temp files (nbatemp\, the starting line-up player cards)
+; in memory while it writes them, and write each to the disk in one go when it
+; is closed, instead of in many small writes (1 = yes, default)
+;BufferTempFiles=1
+; Keep the commentary speech banks (speech\gamespch, playspch, netspch, about
+; 100 to 140 MB) in memory: they are read in the background a few seconds
+; after start, and from then on a commentary line costs no disk or network
+; time (each line was a short hitch in matches, worst from a network drive).
+; 1 = yes (default), 0 = read them from the disk as the original game does.
+;SpeechInMemory=1
+; Skip the start-up screens (default 1): no EA Sports movie, legal screen or
+; intro movie; the game shows its title screen, then the main menu. Also
+; Enhanced Options, User Interface (applies at the next start). 0 = original.
+;SkipIntros=1
+; Skip the credits and special thanks when you quit from the main menu
+; (default 1). Also Enhanced Options, User Interface (applies at once).
+;SkipCredits=1
+; At start, delete a nbatemp\ folder left behind when the game was closed with
+; Alt+F4 or crashed (1 = yes, default). The game deletes it itself on a
+; normal quit. Skipped while another copy of the game runs from this folder.
+;CleanTempFolder=1
+; Add the players cut before release (their art and commentary are on the
+; CD) as free agents (1 = yes, default). Uses nba98_cutplayers.dat and keeps a
+; copy of the database in nba98data\; the original dbdata, origdb and saves
+; folders are never changed. Delete nba98data\ to start again from the
+; original database. With 0 the game uses its own folders as before.
+;CutPlayers=1
+; Michael Jordan in the "Roster Player" slot (Chicago and East All-Stars):
+; name, bio, number, face, career and 1996-97 stats; ratings unchanged
+; (1 = yes, default). Uses nba98_jordan.dat and the same nba98data\ copy.
+; Switching either of these off later does not remove what is already in
+; nba98data\; delete that folder to start again.
+;Jordan=1
+; Distance detail for players. The game swaps each player's uniform texture
+; (256, 128, 64 or 32 pixels) and body model by his distance from the camera,
+; with limits made for a 640x480 screen, so in a normal match nobody gets the
+; sharpest uniform and far players are blurry at high resolutions.
+;   original  the game's own limits
+;   auto      limits scaled by the picture height / 480 (about x4.5 at 4K, x2.25
+;             at 1080p; the 3D is drawn at full size under the CRT filter too)
+;   full      every player always at full detail
+; Default auto. Also Enhanced Options, Display, Distance Detail (applies at once).
+;DistanceDetail=auto
+; All-Star jerseys: in an All-Star game each player wears his club's jersey.
+; Kemp, Brandon, Vin Baker and Chris Gatling changed clubs after the 1997
+; All-Star game, so the game dressed them for 1997-98. 1 (default) gives them
+; the club they played the 1997 game for (Sonics, Cavaliers, Bucks, Mavericks);
+; 0 = as the game shipped. Changes the roster copy in nba98data\ only; needs
+; CutPlayers or Jordan on. Also Enhanced Options, Gameplay (next start).
+;AllStarJerseys=1
+; Optional personal art for Jordan (1 = use it if present, default). If a file
+; named mj.dat is in the game folder (an art pack you make yourself; none is
+; supplied), Jordan gets whatever it holds of his face, headshot and action
+; shot; anything it lacks stays the default. The game reads them through copies
+; in nba98data\art; the game's own files are not changed. Without mj.dat, or
+; with 0, Jordan has the default face and "No photo available".
+;JordanArt=1
+; When mj.dat holds more than one headshot (MJORDAN.BMP, MJORDAN2.BMP to
+; MJORDAN9.BMP) or action shot (MJACT.BMP, MJACT2.BMP to MJACT9.BMP):
+; random (default) picks one at each start, never the one shown last time;
+; 1 to 9 always uses that one (1 = MJORDAN.BMP / MJACT.BMP).
+;JordanHeadshot=random
+;JordanActionShot=random
+; Optional personal speech for Jordan (1 = use it if present, default). If mj.dat
+; also holds the speech entries (arena and play-by-play MIJORDA), the arena
+; announcer uses them; the game reads copies of its speech banks in
+; nba98data\speech. Without them, or with 0, Jordan uses the REJORDA speech.
+;JordanSpeech=1
+; Our settings screens: an "Enhanced Options" button on the main menu (Game
+; Setup), above Load (1 = yes, default). 0 leaves the main menu as it was.
+;OptionsMenu=1
+; Write logs\nba98core.log (1 = yes; default {LOG})
+;Log={LOG}
+; Write logs\timing.log: one line per second with the game clock, simulation
+; steps and frame figures (1 = yes; default {LOG})
+;TimingLog={LOG}
+; Precise game clock (1 = yes, default). The game times itself with
+; GetTickCount, which Windows only updates every 15.6 ms, so its clock ticks
+; came in clumps. This gives it a 1 ms accurate clock instead.
+;PreciseClock=1
+;@debug
+; Crash report: exception, registers and call stack in nba98core.log, plus a
+; minidump in the crash folder (1 = yes, default)
+;CrashLog=1
+; Full memory minidump (about 100 MB) instead of a small one (0 = no, default)
+;CrashDumpFull=0
+; Test the crash report: crash on purpose N seconds after start (0 = off, default)
+;CrashTest=0
+; Log every file the game opens (0 = no, default)
+;LogFileOpens=0
+; Log where every thread is, every N seconds (0 = off, default)
+;ThreadDump=0
+; Boot watch: if the game's start-up stops (sound not started 3 s after the
+; joysticks), log every thread and its CPU use every 0.5 s until it carries
+; on (1 = yes, default)
+;BootWatch=1
+; Stall profiler: for every second with frames over 40 ms, write to
+; logs\profile.log where the game's main thread spent its time and which
+; files it read (1 = yes, default)
+;ProfileStalls=1
+; Log every change of one dword in the game's memory, e.g. 0x5DBFB0 (default off)
+;WatchAddr=
+;@end
+
+[menu]
+; The look of the game's own menus. At each launch the game picks a colour for
+; the menu backgrounds and one of five players for the menu photos. These pin
+; them instead (also in the game: Enhanced Options, User Interface).
+; Colour: random (default), grey (no colour), rose, pink, orchid, lavender,
+; blue, skyblue, teal, mint, green, gold, copper.
+;Tint=random
+; Player: random (default), richmond, johnson, laettner, hardaway, dumars
+; (or 1 to 5).
+;Player=random
+
+[glide]
+; Settings for our glide2x.dll (Glide 2 on Direct3D 11). Replaces dgVoodoo.
+; The game always draws a 640x480 Glide screen. It is shown as a 4:3 picture
+; centred on the monitor (black bars at the sides on a widescreen display).
+; Width/Height, Windowed and VSync can also be set in the game: Enhanced
+; Options, Display (written here; they take effect at the next start).
+; Internal 3D resolution, made 4:3 (default 0 = the 4:3 part of the desktop,
+; e.g. 1440x1080 on a 1920x1080 monitor)
+;Width=0
+;Height=0
+; Run in a normal window instead of borderless full screen (0 = no, default).
+; In a window, Width/Height also set the window size (default 1280x960).
+;Windowed=0
+; 0 = the wrapper paces frames itself (default), 1 = wait for vsync
+;VSync=0
+; Frame rate cap used when VSync=0 (default 60)
+;FrameLimit=60
+; Step lock in matches (default 1): show each frame right after the game has
+; made its next update, so every frame moves the game on by exactly one step
+; (smooth 60 fps). 2 = every other step, an even 30 fps for slow machines.
+; 0 = off (frames paced by FrameLimit only). Menus always use FrameLimit.
+;StepLock=1
+; Full-resolution picture when paused and on the Instant Replay screen
+; (default 1): the game freezes the last frame and draws its menu over a
+; 640x480 copy of it; with 1 only what the game changed (menus, controls, a
+; darkened background) is taken from that copy and the rest stays at full
+; resolution and full width. 0 = the 640x480 copy, as before 0.7.11.
+;FullResPause=1
+; Screenshots (default 1): Page Down saves the picture on the screen to
+; screenshots\NBA98_<date>_<time>.png in the game folder (the game does not
+; see the key). 0 = off.
+;Screenshots=1
+; Display lock (default 1, works with StepLock): steer the game clock very
+; slightly (under 1%) so frames arrive halfway between screen refreshes. Stops
+; the short bursts of uneven frames on 59.94 Hz screens. Only for screens near
+; 60 Hz or 120 Hz; 0 = off.
+;DisplayLock=1
+; In matches with VSync, when every Present has waited for the screen for half
+; a second (a frame waiting in the queue, which judders on some PCs), leave one
+; frame unshown so the queue clears (1, default). 0 = off.
+;QueueSkip=1
+; Depth values past the 16-bit range wrap around, as on a real Voodoo card
+; (default 1). The game draws its in-match stat boxes with such a value; on
+; the card it wraps to the nearest depth, so the boxes cover the players. With
+; 0 (as dgVoodoo does) players, shadows and reflections show over the boxes.
+;DepthWrap=1
+; Smooth (1, default) or sharp pixel (0) scaling of the final picture
+;LinearScaling=1
+; Extra brightness on top of the game's own gamma (default 1.0)
+;Gamma=1.0
+; CRT filter (default off; also in the game: Enhanced Options, Display, where it
+; applies at once). The game's picture is drawn as its own 480 lines on a
+; simulated CRT, so the sharp high-resolution 3D is given up while it is on.
+; Shaders ported from DOSBox Staging (crt-hyllian and vga-1080p, MIT licence).
+;   off, auto (picked by screen height: 4K-class screens get crt-hyllian,
+;   1080p gets the VGA look at exactly 2 lines per game line), sharp, soft
+;CRT=off
+; Widescreen matches (Hor+): on a screen wider than 4:3 the match view is widened
+; to the full width (more of the court at the sides, same height), while the
+; HUD, the menus and the front end stay 4:3 in the middle. With the CRT filter
+; the CRT picture is widescreen too. 1 = on, 0 = off (default 0).
+; Experimental: the end-of-quarter stat screens stay 4:3, and it has not been
+; tested in network games, so do not use it there.
+; Also Enhanced Options, Display, Widescreen (next start).
+;Widescreen=0
+; Frame rate and pacing overlay in the top-left corner (1 = show from the
+; start; default {LOG}). Ctrl+F11 shows or hides it at any time.
+;Overlay={LOG}
+; Write logs\glide2x.log (1 = yes; default {LOG})
+;Log={LOG}
+;@debug
+; Judder log (1 = on, default): logs\<session>\judder.log, one line a second in
+; matches with where each frame's time went (game, file reads, step lock,
+; present) and how often the camera, the players and their animations moved,
+; plus a line for every uneven frame.
+;JudderLog=1
+; Each start of the game logs to its own folder, logs\<date>_<time>_<version>
+; _<build>_<computer>, so old logs never need deleting; logs\latest.txt names
+; the newest.
+; Save the picture as logs\glide_frame_N.bmp at frame N, or every N frames if
+; negative (0 = off, default)
+;DumpFrame=0
+; Ctrl+F10 traces one frame: every draw in order, with its depth, blend and
+; texture state and the game code that made it, in logs\glide_trace_N.txt,
+; plus a picture of that frame (logs\glide_frame_N.bmp).
+;@end
+
+[sound]
+; Settings for our eacsnd.dll (game sound through SDL3; needs SDL3.dll next to
+; the game). Replaces DirectSound and the ALchemy dsound.dll.
+; LatencyMs can also be set in the game: Enhanced Options, Sound.
+; How far ahead the game's mixer is kept, in ms (default 40). Lower = less
+; delay, higher = safer against crackle if the game stalls.
+;LatencyMs=40
+; Audio device buffer size in sample frames (default 0 = SDL's choice)
+;DeviceFrames=0
+; Write logs\eacsnd.log, with underrun counts (1 = yes; default {LOG})
+;Log={LOG}
+
+[input]
+; Gamepads through SDL3 (Xbox, PlayStation, Switch and most others; needs
+; SDL3.dll next to the game). The game sees them as joysticks 1 to 4, with
+; triggers as buttons and the D-pad or left stick for movement.
+; Button numbers shown in the game's Controllers screen:
+;   1 Cross/A  2 Circle/B  3 Square/X  4 Triangle/Y  5 L1/LB  6 R1/RB
+;   7 Select/Back  8 Start  9 L3  10 R3  11 L2/LT  12 R2/RT
+; Gamepads, Deadzone, Stick and PadLayout can also be set in the game:
+; Enhanced Options, Controls (Deadzone and Stick apply at once there).
+; 0 = use Windows joysticks directly instead (default 1)
+;Gamepads=1
+; Pad extras (default 1): Start, A, X or B skips the intros and the
+; automatic replays (as a key or Esc does on the keyboard); the right stick
+; button (R3) switches the CRT filter between Off and Auto (saved here).
+; 0 = off.
+;PadExtras=1
+; Stick dead zone in percent (default 20)
+;Deadzone=20
+; Stick: 8way (default) turns the left stick into 8 clean directions like a
+; D-pad; raw passes it to the game as is. The game's movement is 8-way only.
+;Stick=8way
+; Default button layout for gamepads: ps1 (default) makes the game's own
+; defaults the PlayStation NBA Live 98 layout (first run, the Default button
+; on the Controllers screen, controllers you never customised); pc keeps the
+; original PC defaults. Customised controllers are never changed.
+;PadLayout=ps1
+; Gamepad control of the menus: D-pad or left stick moves a dotted grey box
+; between the buttons, A (Cross) chooses, B (Circle) goes back (Esc). Moving
+; the mouse hides the box. 0 = off (default 1). Also Enhanced Options,
+; Controls, Menu Navigation (applies at once).
+;PadMenus=1
